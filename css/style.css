@@ -10,6 +10,7 @@
   --grayDark-clr: #6b6b6b;
   --body-line-height: 1.55;
   --heading-line-height: 1.1;
+  --font-size-0-8: 0.8rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.5rem;
   --fontSize-3: 2rem;
@@ -74,7 +75,9 @@ nav,
 section {
   display: block;
 }
-
+img {
+  width: 100%;
+}
 /* make the components */
 .btn {
   font-size: calc(var(--fontSize-1) + 0.1rem);
@@ -273,7 +276,8 @@ header {
   align-items: center;
 }
 .logo img {
-  width: 100%;
+  /* width: 100%; */
+  object-fit: cover;
 }
 .nav__list {
   display: flex;
@@ -352,7 +356,7 @@ header {
   font-size: var(--fontSize-1);
   font-weight: var(--fontWeight-2);
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.9rem 2rem;
   border-radius: 5px;
   text-decoration: none;
   margin-bottom: 1.6rem;
@@ -391,7 +395,7 @@ header {
   flex: 1;
 }
 .img-cont {
-  height: 70vh;
+  height: 75vh;
 }
 .about-cont p {
   font-size: var(--fontSize-1);
@@ -450,6 +454,7 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  object-fit: cover;
 }
 .card__cont .info {
   text-align: center;
@@ -474,7 +479,8 @@ header {
   width: 100%;
 }
 .img-project img {
-  width: 100%;
+  /* width: 100%; */
+  object-fit: cover;
 }
 .project-info h3 {
   font-size: var(--fontSize-2);
@@ -807,6 +813,9 @@ section.contact form textarea:valid ~ label {
     justify-content: flex-end;
     width: 100%;
   }
+  .btn {
+    padding: 0.8rem 1.5rem;
+  }
   .photo {
     width: 100%;
     object-fit: cover;
@@ -913,6 +922,10 @@ section.contact form textarea:valid ~ label {
   .hero .img {
     justify-content: flex-end;
     width: 85%;
+  }
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: var(--font-size-0-8);
   }
   .about-cont .img-cont {
     display: none;
