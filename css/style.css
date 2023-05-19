@@ -1,13 +1,15 @@
 /* assign varible for my website */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 :root {
   --main-clr: hsl(13, 95%, 63%);
   --white-clr: hsl(0, 0%, 100%);
   --black-clr: hsl(0, 0%, 27%);
   --black-clr-darktheme: #121212;
-  --black-clr-darktheme2: #252525;
+  --black-clr-darktheme2: #242323;
   --grayLight-clr: #eeeeee;
   --grayLight-2-clr: #c4c4c4;
   --grayDark-clr: #6b6b6b;
+  --grayDark-clr-2: #524f4f;
   --body-line-height: 1.55;
   --heading-line-height: 1.1;
   --font-size-0-8: 0.8rem;
@@ -92,15 +94,15 @@ img {
   position: absolute;
   z-index: 100;
   top: 1.2em;
-  right: 1.2em;
+  right: 1.5em;
   color: var(--foreground);
   border: 2px solid currentColor;
   padding: 4px;
   background: transparent;
   cursor: pointer;
   border-radius: 5px;
-  width: 31px;
-  height: 31px;
+  width: 30px;
+  height: 30px;
 }
 .dark-theme .btn-mode {
   border: 2px solid rgb(165, 165, 165);
@@ -187,8 +189,8 @@ h4 {
   display: none;
   cursor: pointer;
   border: 0;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5em;
+  height: 2.5rem;
   padding: 0em;
   border-radius: 50%;
   color: red;
@@ -269,7 +271,7 @@ header {
 
 .logo {
   text-decoration: none;
-  width: 140px;
+  width: 130px;
   color: var(--main-clr);
   text-transform: uppercase;
   display: flex;
@@ -390,25 +392,30 @@ header {
 .about-cont {
   display: flex;
   gap: var(--fontSize-2);
+  font-weight: 500;
 }
 .about-cont > * {
   flex: 1;
 }
-.img-cont {
+/* .img-cont {
   height: 75vh;
-}
+} */
 .about-cont p {
   font-size: var(--fontSize-1);
   color: var(--grayDark-clr);
   margin-bottom: 0.7rem;
   max-width: 60ch;
 }
-.about-cont .resent {
-  margin: 1.2rem 0;
+.about-me {
+  font-size: 1.1rem;
+}
+.resent {
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 .skil {
   position: relative;
-  margin: 0.9rem 0;
+  margin: 0.75rem 0;
   color: var(--grayDark-clr);
   padding-left: 20px;
   font-weight: var(--fontWeight-2);
@@ -438,9 +445,12 @@ header {
   transition: transform var(--transition-1);
 }
 .card__cont .icons {
-  font-size: 0;
+  text-align: center;
   color: var(--main-clr);
   margin-top: 1rem;
+}
+.box-icon svg {
+  width: 1.8rem;
 }
 .card__cont .info h3 {
   font-size: calc(var(--fontSize-1) + 0.25rem);
@@ -490,16 +500,17 @@ header {
 }
 .project-info p {
   max-width: 60ch;
+  color: var(--grayDark-clr-2);
 }
 section .container-icons-mini {
   color: var(--black-clr);
   margin-top: 1rem;
   font-size: 1.5rem;
   display: flex;
-  gap: 0.4em;
+  gap: 0.3em;
 }
 .proj .btn {
-  margin-top: 2em;
+  margin-top: 1.2em;
 }
 .jq {
   width: 20px;
@@ -756,9 +767,6 @@ section.contact form textarea:valid ~ label {
     font-size: var(--fontSize-5);
     font-weight: var(--fontWeight-5);
   }
-  .img-cont {
-    height: 75vh;
-  }
   .about-cont p {
     margin-bottom: 0.7rem;
     max-width: 50ch;
@@ -802,11 +810,11 @@ section.contact form textarea:valid ~ label {
   .hero h1 {
     font-size: var(--fontSize-4);
   }
-  .about-cont .img-cont {
+  /* .about-cont .img-cont {
     height: 100%;
-  }
-  .about-cont .about-info {
-    flex: 2;
+  } */
+  .about-cont .about-me {
+    flex: 1.5;
   }
   .hero .img {
     display: flex;
@@ -909,6 +917,7 @@ section.contact form textarea:valid ~ label {
     transform: translateY(0%);
   }
   .logo {
+    width: 110px;
     margin: 0 auto;
   }
   .hero {
@@ -927,8 +936,17 @@ section.contact form textarea:valid ~ label {
     padding: 0.7rem 1.2rem;
     font-size: var(--font-size-0-8);
   }
-  .about-cont .img-cont {
-    display: none;
+  .btn-mode {
+    right: 1.6rem;
+  }
+  .about-cont {
+    flex-direction: column;
+  }
+  .skills {
+    display: flex;
+  }
+  .skills > * {
+    flex: 1;
   }
   .card {
     flex-direction: column;
