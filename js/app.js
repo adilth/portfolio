@@ -1,3 +1,4 @@
+//nav bar
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
 
@@ -15,7 +16,7 @@ navToggle.addEventListener("click", () => {
   }
 });
 
-// scrool to top with js
+// scroll to top with js
 let upTuTop = document.getElementById("back-to-top");
 window.onscroll = function () {
   this.scrollY >= 200
@@ -28,10 +29,10 @@ upTuTop.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
-
+//scroll behavior
 const boxes = document.querySelectorAll(".fade");
 const checkBoxes = () => {
-  const triggerBottom = (window.innerHeight / 5) * 4;
+  const triggerBottom = (window.innerHeight / 4) * 3;
   boxes.forEach((box) => {
     const boxTop = box.getBoundingClientRect().top;
     if (boxTop < triggerBottom) {
@@ -43,12 +44,31 @@ const checkBoxes = () => {
 };
 checkBoxes();
 window.addEventListener("scroll", checkBoxes);
-
+//dark mode
 const dark = document.querySelector(".logo-dark-theme");
 const light = document.querySelector(".logo-light-theme");
 const btn = document.getElementById("dark-mode-toggle");
+let darkMode = localStorage.getItem("darkMode");
+const enableDarkMode = () => {
+  dark.classList.add("show-dark");
+  document.body.classList.add("dark-theme");
+  light.classList.add("hide-dark");
+  localStorage.setItem("darkMode", "enabled");
+};
+const disableDarkMode = () => {
+  // dark.classList.remove("show-dark");
+  document.body.classList.remove("dark-theme");
+  localStorage.setItem("darkMode", null);
+  // light.classList.remove("hide-dark");
+};
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
 btn.addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
-  dark.classList.toggle("show-dark");
-  light.classList.toggle("hide-dark");
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "enabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
 });
