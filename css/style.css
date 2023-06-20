@@ -4,7 +4,7 @@
   --main-clr: hsl(13, 95%, 63%);
   --white-clr: hsl(0, 0%, 100%);
   --black-clr: hsl(0, 0%, 27%);
-  --black-clr-darktheme: #121212;
+  --black-clr-darktheme: #171717;
   --black-clr-darktheme2: #242323;
   --grayLight-clr: #eeeeee;
   --grayLight-2-clr: #c4c4c4;
@@ -318,9 +318,7 @@ header {
 /*hero style*/
 
 .hero {
-  /* min-height: 100vh; */
   display: flex;
-  /* align-items: center; */
   gap: var(--fontSize-5, 4em);
 }
 .hero > * {
@@ -397,9 +395,6 @@ header {
 .about-cont > * {
   flex: 1;
 }
-/* .img-cont {
-  height: 75vh;
-} */
 .about-cont p {
   font-size: var(--fontSize-1);
   color: var(--grayDark-clr);
@@ -482,6 +477,9 @@ header {
 .project-cont .proj.proje2 .img-project {
   order: 2;
 }
+.project-cont .proj.proje4 .img-project {
+  order: 2;
+}
 .project-cont .proj > * {
   flex: 1;
 }
@@ -531,7 +529,6 @@ section .container-icons-mini {
 [class*=" devicon-"],
 [class^="devicon-"] {
   font-family: devicon;
-  /* speak: none; */
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
@@ -810,9 +807,6 @@ section.contact form textarea:valid ~ label {
   .hero h1 {
     font-size: var(--fontSize-4);
   }
-  /* .about-cont .img-cont {
-    height: 100%;
-  } */
   .about-cont .about-me {
     flex: 1.5;
   }
