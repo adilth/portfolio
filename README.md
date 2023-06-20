@@ -17,9 +17,10 @@ The portfolio website serves as an online presence to showcase my work and provi
 
 ## Features
 
-- **Project Showcase**: Display a collection of my projects with descriptions, screenshots, and links to live demos or repositories.
+**Project Showcase**: Display collections of my projects with descriptions, screenshots, and links to live demos or repositories.
+
 - **Skills Summary**: Highlight my technical skills and areas of expertise.
-- **About Me**: Provide a brief introduction about myself, my background, and career aspirations.
+- **About Me**: Provide a brief introduction about myself, my background, and my career aspirations.
 - **Contact**: Include my contact information, such as email address and social media profiles, for potential collaborations or job opportunities.
 
 ## Usage
