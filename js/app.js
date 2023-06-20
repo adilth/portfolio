@@ -72,3 +72,5 @@ btn.addEventListener("click", function () {
     disableDarkMode();
   }
 });
+
+document.querySelector(".yearNow").textContent = new Date().getFullYear();
