@@ -6,12 +6,15 @@ document.onclick = function (e) {
   if (e.target.id !== "nav" && e.target.id !== "toggle") {
     nav.classList.remove("nav--visible");
     navToggle.classList.remove("active-bar");
+    navToggle.setAttribute("aria-expanded", "false");
   }
 };
 navToggle.addEventListener("click", () => {
   nav.classList.toggle("nav--visible");
   navToggle.classList.toggle("active-bar");
-  if (nav.classList.contains("nav--visible")) {
+  const expanded = nav.classList.contains("nav--visible");
+  navToggle.setAttribute("aria-expanded", String(expanded));
+  if (expanded) {
     nav.classList.add("active");
   }
 });
