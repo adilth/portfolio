@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SACard by FlashySmart — AI-powered language learning mobile app using spaced repetition. Built with React Native, NestJS, and Supabase."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://adilth.netlify.app/flashysmart.html" />
+    <link rel="canonical" href="https://adilth.netlify.app/flashysmart.html" />
+    <meta property="og:title" content="SACard — AI Language Learning App | Adil Tahiri" />
+    <meta property="og:image" content="./img/flashysmart-app.jpg" />
+    <meta
+      property="og:description"
+      content="SACard — AI-powered language learning mobile app using spaced repetition (SM-2 algorithm), AI-generated content, NestJS backend and Supabase."
+    />
+    <meta name="theme-color" content="#fa6e47" />
+    <meta name="author" content="Adil Tahiri" />
+    <title>SACard — AI Language Learning App | Adil Tahiri</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <style>
+      /* ── Page-specific styles ── */
+      .app-page {
+        background: var(--white-clr);
+        color: var(--black-clr);
+        font-family: "Roboto", sans-serif;
+        line-height: var(--body-line-height);
+      }
+      body.dark .app-page {
+        background: var(--black-clr-darktheme);
+        color: #e8e8e8;
+      }
+
+      /* Back nav */
+      .app-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid var(--grayLight-clr);
+        position: sticky;
+        top: 0;
+        background: var(--white-clr);
+        z-index: 100;
+      }
+      body.dark .app-topbar {
+        background: var(--black-clr-darktheme);
+        border-color: #333;
+      }
+      .app-topbar a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--main-clr);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: opacity 0.2s;
+      }
+      .app-topbar a:hover { opacity: 0.75; }
+      .app-topbar-brand {
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--black-clr);
+      }
+      body.dark .app-topbar-brand { color: #e8e8e8; }
+
+      /* Hero */
+      .app-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 5rem 6rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .app-hero-badge {
+        display: inline-block;
+        background: var(--main-clr);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .app-hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+        color: var(--black-clr);
+      }
+      body.dark .app-hero h1 { color: #f0f0f0; }
+      .app-hero h1 span { color: var(--main-clr); }
+      .app-hero-sub {
+        font-size: 1.1rem;
+        color: var(--grayDark-clr);
+        margin-bottom: 2rem;
+        max-width: 480px;
+      }
+      body.dark .app-hero-sub { color: #aaa; }
+      .app-hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn-app-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--main-clr);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+      .btn-app-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+      .btn-app-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 2px solid var(--main-clr);
+        color: var(--main-clr);
+        padding: 0.72rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+      }
+      .btn-app-secondary:hover {
+        background: var(--main-clr);
+        color: #fff;
+        transform: translateY(-1px);
+      }
+      .app-hero-img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .app-hero-img img {
+        width: 100%;
+        max-width: 340px;
+        border-radius: 28px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+        object-fit: cover;
+      }
+      .app-hero-img::before {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        border-radius: 40px;
+        background: linear-gradient(135deg, hsl(13 95% 63% / 0.15), transparent 60%);
+        z-index: -1;
+      }
+
+      /* Features */
+      .app-features {
+        background: var(--grayLight-clr);
+        padding: 5rem 6rem;
+      }
+      body.dark .app-features {
+        background: var(--black-clr-darktheme2);
+      }
+      .app-section-title {
+        text-align: center;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        color: var(--black-clr);
+      }
+      body.dark .app-section-title { color: #f0f0f0; }
+      .app-section-sub {
+        text-align: center;
+        color: var(--grayDark-clr);
+        margin-bottom: 3rem;
+        font-size: 1rem;
+      }
+      body.dark .app-section-sub { color: #aaa; }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .feature-card {
+        background: var(--white-clr);
+        border-radius: 16px;
+        padding: 1.75rem 1.5rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      body.dark .feature-card {
+        background: var(--black-clr-darktheme);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      }
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      }
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: hsl(13 95% 63% / 0.12);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        color: var(--main-clr);
+      }
+      .feature-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--black-clr);
+      }
+      body.dark .feature-card h3 { color: #e8e8e8; }
+      .feature-card p {
+        font-size: 0.9rem;
+        color: var(--grayDark-clr);
+        line-height: 1.6;
+      }
+      body.dark .feature-card p { color: #999; }
+
+      /* Screenshots */
+      .app-screenshots {
+        padding: 5rem 6rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .screenshots-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+      }
+      .screenshot-item {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        transition: transform 0.25s, box-shadow 0.25s;
+        cursor: pointer;
+      }
+      .screenshot-item:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+      }
+      .screenshot-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+      .screenshot-caption {
+        text-align: center;
+        font-size: 0.78rem;
+        color: var(--grayDark-clr);
+        margin-top: 0.6rem;
+        font-weight: 500;
+      }
+      body.dark .screenshot-caption { color: #888; }
+
+      /* Tech stack */
+      .app-tech {
+        background: var(--grayLight-clr);
+        padding: 5rem 6rem;
+      }
+      body.dark .app-tech {
+        background: var(--black-clr-darktheme2);
+      }
+      .tech-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        max-width: 800px;
+        margin: 2.5rem auto 0;
+      }
+      .tech-pill {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--white-clr);
+        border-radius: 100px;
+        padding: 0.5rem 1.1rem;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--black-clr);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        border: 1px solid hsl(13 95% 63% / 0.2);
+      }
+      body.dark .tech-pill {
+        background: var(--black-clr-darktheme);
+        color: #e0e0e0;
+        border-color: hsl(13 95% 63% / 0.3);
+      }
+      .tech-pill i { font-size: 1.1rem; }
+
+      /* Coming soon / CTA */
+      .app-cta {
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+      .app-cta h2 {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+        color: var(--black-clr);
+      }
+      body.dark .app-cta h2 { color: #f0f0f0; }
+      .app-cta p {
+        color: var(--grayDark-clr);
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body.dark .app-cta p { color: #aaa; }
+      .coming-soon-badge {
+        display: inline-block;
+        background: hsl(13 95% 63% / 0.12);
+        color: var(--main-clr);
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 0.35rem 1rem;
+        border-radius: 20px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        border: 1px solid hsl(13 95% 63% / 0.3);
+      }
+
+      /* Footer */
+      .app-footer {
+        border-top: 1px solid var(--grayLight-clr);
+        padding: 1.5rem 2rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--grayDark-clr);
+      }
+      body.dark .app-footer {
+        border-color: #333;
+        color: #777;
+      }
+      .app-footer a {
+        color: var(--main-clr);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .app-footer a:hover { text-decoration: underline; }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .app-hero {
+          grid-template-columns: 1fr;
+          padding: 3rem 2rem;
+          text-align: center;
+        }
+        .app-hero-img { order: -1; }
+        .app-hero-actions { justify-content: center; }
+        .app-hero-sub { margin-left: auto; margin-right: auto; }
+        .app-features,
+        .app-screenshots,
+        .app-tech { padding: 3rem 2rem; }
+        .screenshots-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+      @media (max-width: 500px) {
+        .screenshots-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        .app-topbar { padding: 0.85rem 1.25rem; }
+      }
+    </style>
+  </head>
+  <body class="app-page">
+    <!-- Top nav -->
+    <nav class="app-topbar" aria-label="Page navigation">
+      <a href="./index.html#projects">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+      </a>
+      <span class="app-topbar-brand">SACard · FlashySmart</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="app-hero" aria-label="App overview">
+      <div class="app-hero-content">
+        <span class="app-hero-badge">React Native · Mobile App</span>
+        <h1>
+          Learn any language <span>smarter</span> with&nbsp;AI
+        </h1>
+        <p class="app-hero-sub">
+          SACard is a flashcard-based language learning app powered by the SM-2 spaced
+          repetition algorithm and AI-generated content — so you always study the right
+          thing at the right time.
+        </p>
+        <div class="app-hero-actions">
+          <span
+            class="btn-app-primary"
+            style="cursor: default; opacity: 0.7;"
+            title="App website coming soon"
+          >
+            <i class="fas fa-globe"></i>
+            Website Coming Soon
+          </span>
+          <a href="./index.html" class="btn-app-secondary">
+            <i class="fas fa-user"></i>
+            View Portfolio
+          </a>
+        </div>
+      </div>
+      <div class="app-hero-img">
+        <img
+          src="./img/flashysmart-app.jpg"
+          alt="SACard app home screen showing language learning dashboard"
+          loading="eager"
+        />
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="app-features" aria-labelledby="features-title">
+      <h2 class="app-section-title" id="features-title">What makes SACard different</h2>
+      <p class="app-section-sub">Everything you need to actually retain a language long-term</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h3>SM-2 Spaced Repetition</h3>
+          <p>
+            Cards are scheduled using the proven SM-2 algorithm so you review words exactly
+            when you're about to forget them — maximising retention with minimal study time.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI-Generated Content</h3>
+          <p>
+            Add a single word and instantly receive 7 example sentences, synonyms,
+            antonyms, translations, and native-speaker audio — all generated by AI.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Deck Organisation</h3>
+          <p>
+            Group cards into topic decks — travel, food, business, and more. Manage
+            multiple learning goals without mixing them up.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Progress Statistics</h3>
+          <p>
+            Visual stats show your daily streak, cards learned, accuracy rate, and
+            upcoming reviews so you always know where you stand.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-language"></i></div>
+          <h3>10+ Languages</h3>
+          <p>
+            Supports over 10 languages including Arabic, French, Spanish, Japanese, German
+            and more, all with matching audio pronunciations.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-lock"></i></div>
+          <h3>Secure Auth &amp; Sync</h3>
+          <p>
+            JWT authentication backed by Supabase (PostgreSQL). Your decks and progress
+            sync across devices and are safely stored in the cloud.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bell"></i></div>
+          <h3>Push Notifications</h3>
+          <p>
+            Daily reminders nudge you to keep your streak going. Notifications are smart
+            — they only fire when you actually have cards due for review.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-moon"></i></div>
+          <h3>Dark Mode</h3>
+          <p>
+            Full dark mode support for comfortable late-night study sessions, following
+            your system preference automatically.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="app-screenshots" aria-labelledby="screenshots-title">
+      <h2 class="app-section-title" id="screenshots-title">App Screenshots</h2>
+      <p class="app-section-sub">A look inside the experience</p>
+      <div class="screenshots-grid">
+        <div>
+          <div class="screenshot-item">
+            <img
+              src="./img/flashysmart-app.jpg"
+              alt="SACard home screen"
+              loading="lazy"
+            />
+          </div>
+          <p class="screenshot-caption">Home</p>
+        </div>
+        <div>
+          <div class="screenshot-item">
+            <img
+              src="./img/decks.jpg"
+              alt="SACard deck management screen"
+              loading="lazy"
+            />
+          </div>
+          <p class="screenshot-caption">Decks</p>
+        </div>
+        <div>
+          <div class="screenshot-item">
+            <img
+              src="./img/statistics.jpg"
+              alt="SACard progress statistics screen"
+              loading="lazy"
+            />
+          </div>
+          <p class="screenshot-caption">Statistics</p>
+        </div>
+        <div>
+          <div class="screenshot-item">
+            <img
+              src="./img/setup-longuge.jpg"
+              alt="SACard language setup screen"
+              loading="lazy"
+            />
+          </div>
+          <p class="screenshot-caption">Language Setup</p>
+        </div>
+        <div>
+          <div class="screenshot-item">
+            <img
+              src="./img/setup-levell.jpg"
+              alt="SACard level setup screen"
+              loading="lazy"
+            />
+          </div>
+          <p class="screenshot-caption">Level Setup</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech stack -->
+    <section class="app-tech" aria-labelledby="tech-title">
+      <h2 class="app-section-title" id="tech-title">Built with</h2>
+      <p class="app-section-sub">A modern mobile-first stack from client to cloud</p>
+      <div class="tech-pills">
+        <span class="tech-pill">
+          <i class="devicon-react-original colored"></i> React Native
+        </span>
+        <span class="tech-pill">
+          <i class="devicon-typescript-plain colored"></i> TypeScript
+        </span>
+        <span class="tech-pill">
+          <i class="devicon-nestjs-plain colored"></i> NestJS
+        </span>
+        <span class="tech-pill">
+          <i class="devicon-supabase-plain colored"></i> Supabase
+        </span>
+        <span class="tech-pill">
+          <i class="devicon-postgresql-plain colored"></i> PostgreSQL
+        </span>
+        <span class="tech-pill">
+          <i class="devicon-docker-plain colored"></i> Docker
+        </span>
+        <span class="tech-pill">
+          <i class="fas fa-key" style="color:var(--main-clr)"></i> JWT Auth
+        </span>
+        <span class="tech-pill">
+          <i class="fas fa-robot" style="color:var(--main-clr)"></i> Gemini AI
+        </span>
+        <span class="tech-pill">
+          <i class="fas fa-bell" style="color:var(--main-clr)"></i> Push Notifications
+        </span>
+        <span class="tech-pill">
+          <i class="fas fa-moon" style="color:var(--main-clr)"></i> Dark Mode
+        </span>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="app-cta" aria-label="App availability">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <h2>SACard is on its way</h2>
+      <p>
+        A dedicated website with download links, guides, and more is in the works.
+        Check back soon or reach out if you'd like early access.
+      </p>
+      <a href="./index.html#contact" class="btn-app-primary">
+        <i class="fas fa-envelope"></i>
+        Get in Touch
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>
+        Built by <a href="./index.html">Adil Tahiri</a> &mdash;
+        <a href="./index.html#projects">Back to portfolio</a>
+      </p>
+    </footer>
+  </body>
+</html>
