@@ -12,14 +12,14 @@ I'm a **Software Engineer** with **5+ years of experience** in full-stack web an
 
 - 🏢 **Software Engineer @ Qalqul** · Casablanca, Morocco (2023 – Present)
 - 📱 Building **SACard** — an AI-powered language learning mobile app (React Native + NestJS + Supabase)
-- 🌐 Portfolio → [adilth.netlify.app](https://adiltahiri.com/)
+- 🌐 Portfolio → [adiltahiri.com](https://adiltahiri.com/)
 - 📬 Reach me → [rajaadil19952012@gmail.com](mailto:rajaadil19952012@gmail.com)
 
 ---
 
 ### 🔗 Connect
 
-[![Portfolio](https://img.shields.io/badge/-adilth.netlify.app-FA6E47?style=for-the-badge&logo=netlify&logoColor=white)](https://adiltahiri.com/)
+[![Portfolio](https://img.shields.io/badge/-adiltahiri.com-FA6E47?style=for-the-badge&logo=netlify&logoColor=white)](https://adiltahiri.com/)
 [![LinkedIn](https://img.shields.io/badge/-adil--tahiri-0072b1?style=for-the-badge&labelColor=0072b1&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adil-tahiri-4681711a3/)
 [![Twitter](https://img.shields.io/badge/-@aadilth-1ca0f1?style=for-the-badge&labelColor=1ca0f1&logo=twitter&logoColor=white)](https://twitter.com/aadilth)
 [![Gmail](https://img.shields.io/badge/-Email-c0392b?style=for-the-badge&labelColor=c0392b&logo=gmail&logoColor=white)](mailto:rajaadil19952012@gmail.com)
