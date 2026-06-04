@@ -71,13 +71,17 @@
         font-size: 0.95rem;
         transition: opacity 0.2s;
       }
-      .app-topbar a:hover { opacity: 0.75; }
+      .app-topbar a:hover {
+        opacity: 0.75;
+      }
       .app-topbar-brand {
         font-weight: 700;
         font-size: 1rem;
         color: var(--black-clr);
       }
-      body.dark .app-topbar-brand { color: #e8e8e8; }
+      body.dark .app-topbar-brand {
+        color: #e8e8e8;
+      }
 
       /* Hero */
       .app-hero {
@@ -108,15 +112,21 @@
         margin-bottom: 1.2rem;
         color: var(--black-clr);
       }
-      body.dark .app-hero h1 { color: #f0f0f0; }
-      .app-hero h1 span { color: var(--main-clr); }
+      body.dark .app-hero h1 {
+        color: #f0f0f0;
+      }
+      .app-hero h1 span {
+        color: var(--main-clr);
+      }
       .app-hero-sub {
         font-size: 1.1rem;
         color: var(--grayDark-clr);
         margin-bottom: 2rem;
         max-width: 480px;
       }
-      body.dark .app-hero-sub { color: #aaa; }
+      body.dark .app-hero-sub {
+        color: #aaa;
+      }
       .app-hero-actions {
         display: flex;
         gap: 1rem;
@@ -133,9 +143,14 @@
         font-weight: 600;
         font-size: 0.95rem;
         text-decoration: none;
-        transition: opacity 0.2s, transform 0.2s;
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
       }
-      .btn-app-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+      .btn-app-primary:hover {
+        opacity: 0.88;
+        transform: translateY(-1px);
+      }
       .btn-app-secondary {
         display: inline-flex;
         align-items: center;
@@ -147,7 +162,10 @@
         font-weight: 600;
         font-size: 0.95rem;
         text-decoration: none;
-        transition: background 0.2s, color 0.2s, transform 0.2s;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.2s;
       }
       .btn-app-secondary:hover {
         background: var(--main-clr);
@@ -163,7 +181,7 @@
         width: 100%;
         max-width: 340px;
         border-radius: 28px;
-        box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
         object-fit: cover;
       }
       .app-hero-img::before {
@@ -190,14 +208,18 @@
         margin-bottom: 0.5rem;
         color: var(--black-clr);
       }
-      body.dark .app-section-title { color: #f0f0f0; }
+      body.dark .app-section-title {
+        color: #f0f0f0;
+      }
       .app-section-sub {
         text-align: center;
         color: var(--grayDark-clr);
         margin-bottom: 3rem;
         font-size: 1rem;
       }
-      body.dark .app-section-sub { color: #aaa; }
+      body.dark .app-section-sub {
+        color: #aaa;
+      }
       .features-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -209,16 +231,18 @@
         background: var(--white-clr);
         border-radius: 16px;
         padding: 1.75rem 1.5rem;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
       }
       body.dark .feature-card {
         background: var(--black-clr-darktheme);
-        box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
       }
       .feature-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
       }
       .feature-icon {
         width: 48px;
@@ -238,13 +262,17 @@
         margin-bottom: 0.5rem;
         color: var(--black-clr);
       }
-      body.dark .feature-card h3 { color: #e8e8e8; }
+      body.dark .feature-card h3 {
+        color: #e8e8e8;
+      }
       .feature-card p {
         font-size: 0.9rem;
         color: var(--grayDark-clr);
         line-height: 1.6;
       }
-      body.dark .feature-card p { color: #999; }
+      body.dark .feature-card p {
+        color: #999;
+      }
 
       /* Screenshots */
       .app-screenshots {
@@ -261,13 +289,15 @@
       .screenshot-item {
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-        transition: transform 0.25s, box-shadow 0.25s;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
         cursor: pointer;
       }
       .screenshot-item:hover {
         transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
       }
       .screenshot-item img {
         width: 100%;
@@ -282,7 +312,9 @@
         margin-top: 0.6rem;
         font-weight: 500;
       }
-      body.dark .screenshot-caption { color: #888; }
+      body.dark .screenshot-caption {
+        color: #888;
+      }
 
       /* Tech stack */
       .app-tech {
@@ -310,7 +342,7 @@
         font-size: 0.88rem;
         font-weight: 500;
         color: var(--black-clr);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
         border: 1px solid hsl(13 95% 63% / 0.2);
       }
       body.dark .tech-pill {
@@ -318,7 +350,9 @@
         color: #e0e0e0;
         border-color: hsl(13 95% 63% / 0.3);
       }
-      .tech-pill i { font-size: 1.1rem; }
+      .tech-pill i {
+        font-size: 1.1rem;
+      }
 
       /* Coming soon / CTA */
       .app-cta {
@@ -331,7 +365,9 @@
         margin-bottom: 0.75rem;
         color: var(--black-clr);
       }
-      body.dark .app-cta h2 { color: #f0f0f0; }
+      body.dark .app-cta h2 {
+        color: #f0f0f0;
+      }
       .app-cta p {
         color: var(--grayDark-clr);
         font-size: 1rem;
@@ -340,7 +376,9 @@
         margin-left: auto;
         margin-right: auto;
       }
-      body.dark .app-cta p { color: #aaa; }
+      body.dark .app-cta p {
+        color: #aaa;
+      }
       .coming-soon-badge {
         display: inline-block;
         background: hsl(13 95% 63% / 0.12);
@@ -372,7 +410,9 @@
         text-decoration: none;
         font-weight: 500;
       }
-      .app-footer a:hover { text-decoration: underline; }
+      .app-footer a:hover {
+        text-decoration: underline;
+      }
 
       /* Responsive */
       @media (max-width: 900px) {
@@ -381,17 +421,33 @@
           padding: 3rem 2rem;
           text-align: center;
         }
-        .app-hero-img { order: -1; }
-        .app-hero-actions { justify-content: center; }
-        .app-hero-sub { margin-left: auto; margin-right: auto; }
+        .app-hero-img {
+          order: -1;
+        }
+        .app-hero-actions {
+          justify-content: center;
+        }
+        .app-hero-sub {
+          margin-left: auto;
+          margin-right: auto;
+        }
         .app-features,
         .app-screenshots,
-        .app-tech { padding: 3rem 2rem; }
-        .screenshots-grid { grid-template-columns: repeat(3, 1fr); }
+        .app-tech {
+          padding: 3rem 2rem;
+        }
+        .screenshots-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
       @media (max-width: 500px) {
-        .screenshots-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-        .app-topbar { padding: 0.85rem 1.25rem; }
+        .screenshots-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 0.75rem;
+        }
+        .app-topbar {
+          padding: 0.85rem 1.25rem;
+        }
       }
     </style>
   </head>
@@ -409,9 +465,7 @@
     <section class="app-hero" aria-label="App overview">
       <div class="app-hero-content">
         <span class="app-hero-badge">React Native · Mobile App</span>
-        <h1>
-          Learn any language <span>smarter</span> with&nbsp;AI
-        </h1>
+        <h1>Learn any language <span>smarter</span> with&nbsp;AI</h1>
         <p class="app-hero-sub">
           SACard is a flashcard-based language learning app powered by the SM-2 spaced
           repetition algorithm and AI-generated content — so you always study the right
@@ -420,7 +474,7 @@
         <div class="app-hero-actions">
           <span
             class="btn-app-primary"
-            style="cursor: default; opacity: 0.7;"
+            style="cursor: default; opacity: 0.7"
             title="App website coming soon"
           >
             <i class="fas fa-globe"></i>
@@ -444,14 +498,17 @@
     <!-- Features -->
     <section class="app-features" aria-labelledby="features-title">
       <h2 class="app-section-title" id="features-title">What makes SACard different</h2>
-      <p class="app-section-sub">Everything you need to actually retain a language long-term</p>
+      <p class="app-section-sub">
+        Everything you need to actually retain a language long-term
+      </p>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-brain"></i></div>
           <h3>SM-2 Spaced Repetition</h3>
           <p>
-            Cards are scheduled using the proven SM-2 algorithm so you review words exactly
-            when you're about to forget them — maximising retention with minimal study time.
+            Cards are scheduled using the proven SM-2 algorithm so you review words
+            exactly when you're about to forget them — maximising retention with minimal
+            study time.
           </p>
         </div>
         <div class="feature-card">
@@ -498,8 +555,8 @@
           <div class="feature-icon"><i class="fas fa-bell"></i></div>
           <h3>Push Notifications</h3>
           <p>
-            Daily reminders nudge you to keep your streak going. Notifications are smart
-            — they only fire when you actually have cards due for review.
+            Daily reminders nudge you to keep your streak going. Notifications are smart —
+            they only fire when you actually have cards due for review.
           </p>
         </div>
         <div class="feature-card">
@@ -595,16 +652,16 @@
           <i class="devicon-docker-plain colored"></i> Docker
         </span>
         <span class="tech-pill">
-          <i class="fas fa-key" style="color:var(--main-clr)"></i> JWT Auth
+          <i class="fas fa-key" style="color: var(--main-clr)"></i> JWT Auth
         </span>
         <span class="tech-pill">
-          <i class="fas fa-robot" style="color:var(--main-clr)"></i> Gemini AI
+          <i class="fas fa-robot" style="color: var(--main-clr)"></i> Gemini AI
         </span>
         <span class="tech-pill">
-          <i class="fas fa-bell" style="color:var(--main-clr)"></i> Push Notifications
+          <i class="fas fa-bell" style="color: var(--main-clr)"></i> Push Notifications
         </span>
         <span class="tech-pill">
-          <i class="fas fa-moon" style="color:var(--main-clr)"></i> Dark Mode
+          <i class="fas fa-moon" style="color: var(--main-clr)"></i> Dark Mode
         </span>
       </div>
     </section>
@@ -614,8 +671,8 @@
       <span class="coming-soon-badge">Coming Soon</span>
       <h2>SACard is on its way</h2>
       <p>
-        A dedicated website with download links, guides, and more is in the works.
-        Check back soon or reach out if you'd like early access.
+        A dedicated website with download links, guides, and more is in the works. Check
+        back soon or reach out if you'd like early access.
       </p>
       <a href="./index.html#contact" class="btn-app-primary">
         <i class="fas fa-envelope"></i>

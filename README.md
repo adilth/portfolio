@@ -2,18 +2,20 @@
 
 Personal portfolio website of Adil Tahiri, Software Engineer at [Qalqul](https://github.com/qalqul), based in Casablanca, Morocco.
 
-🌐 **Live site:** [adilth.netlify.app](https://adilth.netlify.app)
+🌐 **Live site:** [adilth.netlify.app](https://adiltahiri.com)
 
 ---
 
 ## Table of Contents
 
-- [About](#about)
-- [Sections](#sections)
-- [Tech Stack](#tech-stack)
-- [Projects Featured](#projects-featured)
-- [SEO & Accessibility](#seo--accessibility)
-- [Local Development](#local-development)
+- [Adil Tahiri — Portfolio](#adil-tahiri--portfolio)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Sections](#sections)
+  - [Tech Stack](#tech-stack)
+  - [Projects Featured](#projects-featured)
+  - [SEO \& Accessibility](#seo--accessibility)
+  - [Local Development](#local-development)
 
 ---
 
@@ -23,19 +25,20 @@ A fast, accessible, single-page portfolio built with vanilla HTML, CSS, and Java
 
 ## Sections
 
-| Section | Description |
-|---|---|
-| **Hero** | Intro, social links, CTA |
-| **About** | Bio, skills list, CV download |
-| **Stack** | Visual tech icon grid |
-| **Experience** | Timeline: Qalqul, Freelance, 100Devs |
-| **Services** | Website design, development, responsive design, performance |
-| **Projects** | 6 featured projects with tech icons and live links |
-| **Contact** | Contact form (Formspree) + direct contact info |
+| Section        | Description                                                 |
+| -------------- | ----------------------------------------------------------- |
+| **Hero**       | Intro, social links, CTA                                    |
+| **About**      | Bio, skills list, CV download                               |
+| **Stack**      | Visual tech icon grid                                       |
+| **Experience** | Timeline: Qalqul, Freelance, 100Devs                        |
+| **Services**   | Website design, development, responsive design, performance |
+| **Projects**   | 6 featured projects with tech icons and live links          |
+| **Contact**    | Contact form (Formspree) + direct contact info              |
 
 ## Tech Stack
 
 **Website itself:**
+
 - HTML5, CSS3 (custom properties, responsive grid/flex)
 - Vanilla JavaScript (scroll animations, dark mode, nav toggle)
 - [Devicons](https://devicon.dev/) for tech icons
@@ -47,14 +50,14 @@ A fast, accessible, single-page portfolio built with vanilla HTML, CSS, and Java
 
 ## Projects Featured
 
-| Project | Tech | Link |
-|---|---|---|
-| **SACard** — AI Language Learning App | React Native, NestJS, Supabase, TypeScript | [GitHub](https://github.com/adilth/flashySmart) |
+| Project                                   | Tech                                                  | Link                                              |
+| ----------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- |
+| **SACard** — AI Language Learning App     | React Native, NestJS, Supabase, TypeScript            | [GitHub](https://github.com/adilth/flashySmart)   |
 | **Maintain** — AI Content Recommendations | Next.js 15, React 19, TypeScript, Tailwind, Gemini AI | [GitHub](https://github.com/adilth/maintain-time) |
-| **Pocket Process** — Finance Tracker | Node.js, Express, MongoDB, Chart.js | [Live](https://pocket-process.cyclic.app) |
-| **SamiFood** — Restaurant Delivery | React, Firebase, HTML/CSS | [Live](https://samifood.onrender.com) |
-| **Special Tour** — Travel Website | HTML, CSS, JS, Bootstrap | [Live](https://specailtour.netlify.app) |
-| **Amina Salon** — Booking Website | HTML, CSS, JS, Bootstrap | [Live](https://amina-salon.netlify.app) |
+| **Pocket Process** — Finance Tracker      | Node.js, Express, MongoDB, Chart.js                   | [Live](https://pocket-process.cyclic.app)         |
+| **SamiFood** — Restaurant Delivery        | React, Firebase, HTML/CSS                             | [Live](https://samifood.onrender.com)             |
+| **Special Tour** — Travel Website         | HTML, CSS, JS, Bootstrap                              | [Live](https://specailtour.netlify.app)           |
+| **Amina Salon** — Booking Website         | HTML, CSS, JS, Bootstrap                              | [Live](https://amina-salon.netlify.app)           |
 
 ## SEO & Accessibility
 
